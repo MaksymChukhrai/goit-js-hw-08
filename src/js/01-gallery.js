@@ -1,10 +1,8 @@
-// Add imports above this line
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
+// import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
-// console.log(galleryItems);
 const galleryList = document.querySelector(".gallery");
-
 const liElements = galleryItems.map(
   (item) => `
   <li class="gallery__item">
@@ -14,10 +12,9 @@ const liElements = galleryItems.map(
   </li>
 `
 );
-
 galleryList.insertAdjacentHTML('beforeend', liElements.join(''));
 
-const gallery  = new SimpleLightbox('.gallery a', {
+const gallery = new SimpleLightbox('.gallery a', {
   captions: true,
   captionDelay: 250,
   captionsData: "alt",
