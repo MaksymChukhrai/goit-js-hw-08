@@ -27,6 +27,7 @@ function loadFromLocalStorage() {
 
 window.addEventListener('load', loadFromLocalStorage);
 
+emailInput.addEventListener('input', throttle(saveToLocalStorage, 500));
 messageInput.addEventListener('input', throttle(saveToLocalStorage, 500));
 
 //обработчики события input для полей email и message, которые будут вызывать функцию saveToLocalStorage с задержкой в 500 миллисекунд
