@@ -1,10 +1,10 @@
 import { galleryItems } from './gallery-items.js';
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryList = document.querySelector(".gallery");
+const galleryList = document.querySelector('.gallery');
 const liElements = galleryItems.map(
-  (item) => `
+  item => `
   <li class="gallery__item">
     <a class="gallery__link" href="${item.original}">
       <img class="gallery__image" src="${item.preview}" data-source="${item.original}" alt="${item.description}" />
@@ -17,7 +17,5 @@ galleryList.insertAdjacentHTML('beforeend', liElements.join(''));
 const gallery = new SimpleLightbox('.gallery a', {
   captions: true,
   captionDelay: 250,
-  captionsData: "alt",
+  captionsData: 'alt',
 });
-
-
