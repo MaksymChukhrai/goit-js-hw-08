@@ -34,18 +34,16 @@ messageInput.addEventListener('input', throttle(saveToLocalStorage, 500));
 form.addEventListener('submit', evt => {
   evt.preventDefault();
   localStorage.removeItem('feedback-form-state');
+  console.log({
+    "email": emailInput.value,
+    "message": messageInput.value,
+  });
+
   emailInput.value = '';
   messageInput.value = '';
-  console.log(
-    {
-      email: emailInput.name,
-      value: emailInput.value,
-    },
-    {
-      email: messageInput.name,
-      value: messageInput.value,
-    }
-  );
+
+
+  
 });
 
-//обработчик события submit для формы, который будет очищать localStorage и поля формы, а также выводить объект с полями email и message и их значениями в консоль
+// обработчик события submit для формы, который будет очищать localStorage и поля формы, а также выводить объект с полями email и message и их значениями в консоль
